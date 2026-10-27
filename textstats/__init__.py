@@ -43,3 +43,14 @@ def word_frequencies(text):
     for w in words(text):
         freq[w] = freq.get(w, 0) + 1
     return freq
+
+
+def lexical_density(text):
+    """Distinct words divided by total words, rounded to three decimals.
+
+    Returns 0.0 if there are no words.
+    """
+    ws = words(text)
+    if not ws:
+        return 0.0
+    return round(len(set(ws)) / len(ws), 3)
