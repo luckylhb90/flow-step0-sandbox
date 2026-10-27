@@ -24,3 +24,14 @@ def longest_word(text):
         if len(w) > len(best):
             best = w
     return best
+
+
+def average_word_length(text):
+    """Mean length of the words of text, rounded to two decimals.
+
+    Returns 0.0 if there are no words.
+    """
+    ws = words(text)
+    if not ws:
+        return 0.0
+    return round(sum(len(w) for w in ws) / len(ws), 2)
