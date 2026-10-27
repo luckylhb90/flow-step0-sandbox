@@ -12,3 +12,15 @@ def words(text):
 def word_count(text):
     """How many words text has."""
     return len(words(text))
+
+
+def longest_word(text):
+    """The longest word of text (lower-cased, as in words()).
+
+    Ties go to the word that appears first; returns "" if there are no words.
+    """
+    best = ""
+    for w in words(text):
+        if len(w) > len(best):
+            best = w
+    return best
