@@ -23,3 +23,8 @@ def test_trailing_text_without_punctuation_counts_as_one_sentence():
 
 def test_trailing_whitespace_is_not_a_sentence():
     assert sentence_count("Hi.   ") == 1
+
+
+def test_periods_inside_unspaced_text_do_not_end_sentences():
+    assert sentence_count("3.14 is pi.") == 1
+    assert sentence_count("a.b") == 1

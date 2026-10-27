@@ -2,7 +2,7 @@
 import re
 
 _WORD = re.compile(r"[A-Za-z']+")
-_SENTENCE_END = re.compile(r"[.!?]+")
+_SENTENCE_END = re.compile(r"[.!?]+(?=\s|\Z)")
 
 
 def words(text):
