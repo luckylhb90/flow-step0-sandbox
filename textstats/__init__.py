@@ -35,3 +35,11 @@ def average_word_length(text):
     if not ws:
         return 0.0
     return round(sum(len(w) for w in ws) / len(ws), 2)
+
+
+def word_frequencies(text):
+    """Map each word of text (lower-cased, as in words()) to how often it occurs."""
+    freq = {}
+    for w in words(text):
+        freq[w] = freq.get(w, 0) + 1
+    return freq
