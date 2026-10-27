@@ -28,3 +28,9 @@ def test_trailing_whitespace_is_not_a_sentence():
 def test_periods_inside_unspaced_text_do_not_end_sentences():
     assert sentence_count("3.14 is pi.") == 1
     assert sentence_count("a.b") == 1
+
+
+def test_terminal_punctuation_before_closing_quotes_and_parentheses():
+    assert sentence_count('\"Stop.\" She left.') == 2
+    assert sentence_count("He said (really.) Then left.") == 2
+    assert sentence_count('He said "hi." Then left.') == 2
